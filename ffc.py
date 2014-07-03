@@ -1,6 +1,5 @@
-
-#TODO CLI interface
 """ ffc url dir [-w | --watch [-t | --timer (=default 30s)]]"""
+#TODO CLI interface
 #TODO watch thread
 
 
@@ -25,14 +24,13 @@ def get_images(url):
 def download(img_url,filename,dr):
     img_url = 'http://i.'+img_url
     obj = dr+'/'+filename
-    #print"downloading "+img_url
+    print"downloading "+img_url
     urlretrieve(img_url,obj)
 
 @click.command()
-@click.option('--Watch',default = 0)
 @click.argument('url')
 @click.argument('dir')
-def main(url,dir,Watch):
+def main(url,dir):
     img_list = get_images(url)
     for item in img_list:
         filename = item.split('/')[-1]

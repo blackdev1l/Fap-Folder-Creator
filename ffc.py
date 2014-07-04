@@ -24,7 +24,7 @@ def get_images(url):
 def download(img_url,filename,dr):
     img_url = 'http://i.'+img_url
     obj = dr+'/'+filename
-    print"downloading "+img_url
+    print("downloading "+img_url)
     urlretrieve(img_url,obj)
 
 @click.command()

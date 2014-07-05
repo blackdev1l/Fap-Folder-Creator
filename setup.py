@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name="Fap Folder Creator",
-    version="1.0",
+    version="1.1",
     py_modules=['ffc'],
     install_requires=[
         'Click',

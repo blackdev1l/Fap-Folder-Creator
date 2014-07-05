@@ -13,12 +13,13 @@ if you are on a debian-based distro
 
 
 ##Usage  
-`$ python ffc.py url dir `  
+`$ python ffc.py`  
 url = thread's link  
 dir = destination folder
 
 ##TODO
-* Watch Thread
-* Error Handling
+* ✓ Watch Thread
+* ✓ Error Handling
 * Optimization
 * Better CLI 
+* Folder creation if the dir isn't found

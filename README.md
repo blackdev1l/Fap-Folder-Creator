@@ -15,7 +15,7 @@ if you are on a debian-based distro
 
 ##Usage  
 On linux:  
-`$ffc.py [-h] [-t SEC] [--version] URL DIR`  
+`$ ffc.py [-h] [-t SEC] [--version] URL DIR`  
 On Windows:  
 Double click the script. (No input required) 
 
@@ -26,3 +26,4 @@ Double click the script. (No input required)
 * ✓ Better CLI 
 * Folder creation if the dir isn't found
 * Optimization
+* Windows Binaries

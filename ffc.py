@@ -5,6 +5,7 @@
 #TODO GUI
 #TODO mkdir
 
+
 """
     errors:
             1. Url is not from 4chan.org
@@ -12,12 +13,15 @@
             3. Thread is 404
 """
 
+import sys
 import contextlib
 import json
 from urllib import urlretrieve
 import urllib2
 import haul
 from time import sleep
+import argparse
+import os.path
 
 
 def watch_thread(time,url,dr):
@@ -62,6 +66,19 @@ def get_images(url):
 
 def url_to_json(url):
     return 'http://a.4cdn.org/'+url[24:]+'.json'
+def check_dir(dir):
+    # Check whether directory exists
+    if not os.path.isdir(dir):
+        print("Destination path ({0}) doesn't exist!".format(dir))
+        sys.exit(2)
+
+    # Check permission
+    if not os.access(dir, os.R_OK):
+        print("Destination path {0} is not readable! (Check permissions)".format(dir))
+        sys.exit(2)
+    elif not os.access(dir, os.W_OK):
+        print("Destination path {0} is not writeable! (Check permissions)".format(dir))
+        sys.exit(2)
 
 def download(img_url,filename,dr):
     img_url = 'http://i.'+img_url
@@ -69,15 +86,9 @@ def download(img_url,filename,dr):
     print("downloading "+img_url)
     urlretrieve(img_url,obj)
 
-def main():
-    time = 10
-    url = raw_input("url: ")
+def main(url,dir,time):
 
-    if 'boards.4chan.org/' in url:
-        pass
-    else:
-        exit(1)
-    dir = raw_input("dir: ")
+
     urljson = url_to_json(url)
 
     try:
@@ -96,4 +107,27 @@ def main():
     watch_thread(time,url,dir)
 
 if __name__ == '__main__':
-    main()
+
+    # OS check, if Windows you can doubleclick the script and it will work
+    if sys.platform.startswith('linux'):
+        parser = argparse.ArgumentParser(description='Image downloader for 4chan\'s threads with auto watch thread')
+        parser.add_argument('url', metavar='URL', type=str,
+                            help='Thread\'s URL')
+        parser.add_argument('dir', metavar='DIR', type=str,
+                            help='Directory where to download the images')
+        parser.add_argument('-t', '--timer', metavar='SEC',type=int, default='10', required=False,
+                            help='Seconds of pause between a check to thread and another while is in Watch Thread mode')
+        parser.add_argument('--version', action='version', version='%(prog)s 0.3')
+        args = parser.parse_args()
+
+        check_dir(args.dir)
+
+        main(args.url, args.dir, args.timer)
+    else:
+        url = raw_input('url: ')
+        dir = raw_input('dir: ')
+        timer = 10
+
+        check_dir(dir)
+        main(url,dir,timer)
+

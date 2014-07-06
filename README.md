@@ -21,5 +21,5 @@ dir = destination folder
 * ✓ Watch Thread
 * ✓ Error Handling
 * Optimization
-* Better CLI 
+* ✓ Better CLI 
 * Folder creation if the dir isn't found

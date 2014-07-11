@@ -24,6 +24,8 @@ Double click the script. (No input required)
 * ✓ Watch Thread
 * ✓ Error Handling
 * ✓ Better CLI 
-* Folder creation if the dir isn't found
+* ✓ Folder creation if the dir isn't found
 * Optimization
 * Windows Binaries
+* GUI for windows only 
+

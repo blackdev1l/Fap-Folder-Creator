@@ -1,9 +1,6 @@
+#!/usr/bin/python2.7
 """ ffc url dir [-w | --watch [-t | --timer (=default 30s)]]"""
-#TODO CLI interface
-#TODO watch thread
-#TODO handling error (404)
 #TODO GUI
-#TODO mkdir
 
 
 """
@@ -67,11 +64,15 @@ def get_images(url):
 def url_to_json(url):
     return 'http://a.4cdn.org/'+url[24:]+'.json'
 def check_dir(dir):
-    # Check whether directory exists
+    # Check whether directory exists and create one 
     if not os.path.isdir(dir):
         print("Destination path ({0}) doesn't exist!".format(dir))
-        sys.exit(2)
-
+        print("Create folder? [y/n] ")
+        req = raw_input()
+        if req is 'y':
+            os.mkdir(dir)
+        else:
+            sys.exit(2)
     # Check permission
     if not os.access(dir, os.R_OK):
         print("Destination path {0} is not readable! (Check permissions)".format(dir))

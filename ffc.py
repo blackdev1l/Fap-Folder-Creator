@@ -22,7 +22,9 @@ import os.path
 
 
 def watch_thread(time,url,dr):
+    print("Watching...")
     urljson = url_to_json(url)
+
 
     with contextlib.closing(urllib2.urlopen(urljson)) as j:
         j_obj = json.load(j)

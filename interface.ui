@@ -11,14 +11,14 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Fap Folder Creator</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>10</y>
+      <y>11</y>
       <width>21</width>
       <height>21</height>
      </rect>
@@ -31,7 +31,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>40</y>
+      <y>44</y>
       <width>46</width>
       <height>13</height>
      </rect>
@@ -44,7 +44,7 @@
     <property name="geometry">
      <rect>
       <x>420</x>
-      <y>40</y>
+      <y>41</y>
       <width>25</width>
       <height>19</height>
      </rect>
@@ -92,72 +92,27 @@
    <widget class="QProgressBar" name="progressBar">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>104</x>
       <y>80</y>
       <width>251</width>
       <height>16</height>
      </rect>
     </property>
     <property name="value">
-     <number>24</number>
-    </property>
-   </widget>
-   <widget class="QLabel" name="minImageLabel">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>80</y>
-      <width>16</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>80</y>
-      <width>16</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>/</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="maxImageLabel">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>80</y>
-      <width>16</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="watch_label">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>60</y>
-      <width>101</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Watching thread...</string>
-    </property>
-    <property name="indent">
      <number>0</number>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox">
+    <property name="geometry">
+     <rect>
+      <x>23</x>
+      <y>80</y>
+      <width>70</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Watch</string>
     </property>
    </widget>
   </widget>

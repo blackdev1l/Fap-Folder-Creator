@@ -8,7 +8,9 @@ import ffc
 import contextlib
 import json
 import urllib2
-
+"""
+This Script works with PyQt4 only
+"""
 class Worker(QThread):
     def getVar(self,dir,url,watch):
         self.dir = dir

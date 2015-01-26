@@ -65,6 +65,7 @@ def get_images(url):
 
 def url_to_json(url):
     return 'http://a.4cdn.org/'+url[24:]+'.json'
+
 def check_dir(dir):
     # Check whether directory exists and create one 
     if not os.path.isdir(dir):
